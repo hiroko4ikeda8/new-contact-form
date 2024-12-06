@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\NewContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/', [NewContactController::class, 'index']);//入力画面
+Route::post('/contacts/confirm', [NewContactController::class, 'confirm']);//確認画面
+Route::post('/contacts', [NewContactController::class, 'store']);//保存
+Route::get('/thanks', [NewContactController::class, 'thanks']);//ありがとう画面
