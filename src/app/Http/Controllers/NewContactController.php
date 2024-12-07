@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contact;
 use App\Http\Requests\ContactRequest;
 
 class NewContactController extends Controller
@@ -15,16 +16,17 @@ class NewContactController extends Controller
     //確認ページ
     public function confirm(ContactRequest $request)
     {
-        $contact = $request->only(['last_name', 'first_name', 'gender', 'email', 'tel', 'address', 'building', 'inquiry_Type', 'contact']);
-
-
+        $contact = $request->only(['last_name', 'first_name', 'gender', 'email', 'tel1', 'tel2', 'tel3', 'address', 'building', 'inquiry_type', 'content']);
 
         return view('confirm', compact('contact'));
     }
 
     //完了ページ
-    public function thanks()
+    public function store(ContactRequest $request)
     {
+        $contact = $request->only(['last_name', 'first_name', 'gender', 'email', 'tel1', 'tel2', 'tel3', 'address', 'building', 'inquiry_type', 'content']);
+        Contact::create($contact);
+
         return view('thanks');
     }
 
