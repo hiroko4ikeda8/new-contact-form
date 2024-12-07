@@ -26,7 +26,7 @@
             </div>
         </div>
         <div class="form__button">
-            <button class="form__button-submit" type="button" onclick="location.href='{{ route('contact.form') }}'">HOME</button>
+            <button class="form__button-submit" type="button" onclick="location.href='{{ route('/') }}'">HOME</button>
         </div>
     </main>
 </body>

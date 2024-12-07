@@ -27,7 +27,8 @@ class NewContactController extends Controller
         $contact = $request->only(['last_name', 'first_name', 'gender', 'email', 'tel1', 'tel2', 'tel3', 'address', 'building', 'inquiry_type', 'content']);
         Contact::create($contact);
 
-        return view('thanks');
+        return
+        redirect()->route('contact.thanks');
     }
 
     //管理画面

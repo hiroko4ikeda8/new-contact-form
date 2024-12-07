@@ -11,7 +11,7 @@
             <h2>Contact</h2>
         </div>
         <form class="form" action="/contacts/confirm" method="post">
-            @csrf
+        @csrf
             <div class="form__group">
                 <div class="form__group-title">
                     <span class="form__label--item">お名前</span>

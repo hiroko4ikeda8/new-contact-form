@@ -13,7 +13,7 @@
         <h2>confirm</h2>
     </div>
     <form class="form" action="/contacts" method="post">
-        @csrf
+    @csrf
         <div class="confirm-table">
             <table class="confirm-table__inner">
                 <tr class="confirm-table__row">
@@ -68,7 +68,7 @@
         </div>
         <div class="form__button">
             <button class="form__button-submit" type="submit">送信</button>
-            <button class="form__button-submit" type="button" onclick="location.href='{{ route('contact-form') }}'">修正</button>
+            <button class="form__button-submit" type="button" onclick="location.href='{{ route('/') }}'">修正</button>
         </div>
     </form>
 </div>

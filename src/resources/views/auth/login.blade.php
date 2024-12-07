@@ -4,19 +4,13 @@
 <link rel="stylesheet" href="{{ asset('css/login.css') }}">
 @endsection
 
-<ul class="header-nav">
-    <li class="header-nav__item">
-        <a class="header-nav__link"  href="/register">register</a>
-    </li>
-</ul>
-</nav>
-
 @section('content')
 <div class="login__content">
     <div class="login-form__heading">
         <h2>ログイン</h2>
     </div>
-    <form class="form">
+    <form class="form" action="/login" method="post">
+        @csrf
         <div class="form__group">
             <div class="form__group-title">
                 <span class="form__label--item">メールアドレス</span>
@@ -51,5 +45,8 @@
             <button class="form__button-submit" type="submit">ログイン</button>
         </div>
     </form>
+    <div class="register__link">
+        <a class="register__button-submit" href="/register">会員登録の方はこちら</a>
+    </div>
 </div>
 @endsection
