@@ -4,10 +4,17 @@
 <link rel="stylesheet" href="{{ asset('css/login.css') }}">
 @endsection
 
+<ul class="header-nav">
+    <li class="header-nav__item">
+        <a class="header-nav__link" href="/register">register</a>
+    </li>
+</ul>
+</nav>
+
 @section('content')
 <div class="login__content">
     <div class="login-form__heading">
-        <h2>ログイン</h2>
+        <h2>Login</h2>
     </div>
     <form class="form" action="/login" method="post">
         @csrf

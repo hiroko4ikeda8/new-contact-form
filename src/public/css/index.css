@@ -6,6 +6,9 @@
 }
 
 .contact-form__heading {
+    color: #8B7969;
+    font-family: Inika;
+    font-size: 20px;
     margin-bottom: 40px;
     text-align: center;
 }

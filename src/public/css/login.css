@@ -5,6 +5,9 @@
 }
 
 .login-form__heading {
+    color: #8B7969;
+    font-family: Inika;
+    font-size: 20px;
     margin-bottom: 20px;
     text-align: center;
 }
@@ -49,7 +52,7 @@
     height: 50px;
     border: none;
     border-radius: 3px;
-    background: #000;
+    background: #8B7969;
     color: #fff;
     cursor: pointer;
 }

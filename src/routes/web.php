@@ -15,8 +15,8 @@ use App\Http\Controllers\NewContactController;
 |
 */
 
-Route::get('register', [AuthController::class, 'register']);
-Route::get('login', [AuthController::class, 'login']);
+Route::get('auth.register', [AuthController::class, 'register']);
+Route::get('auth.login', [AuthController::class, 'login']);
 Route::get('/', [NewContactController::class, 'index'])->name('/');//入力画面
 Route::post('/contacts/confirm', [NewContactController::class, 'confirm']);//確認画面
 Route::post('/contacts', [NewContactController::class, 'store']);//保存
