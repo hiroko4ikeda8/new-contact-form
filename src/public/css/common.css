@@ -18,3 +18,9 @@
     text-decoration-skip-ink: none;
 
 }
+
+.header-nav__link {
+    color: #8B7969;
+    font-family: Inika;
+    text-decoration: none;
+}

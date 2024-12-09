@@ -32,7 +32,8 @@ class ContactRequest extends FormRequest
             'tel2' => 'required|regex:/^\d{4,5}$/',
             'tel3' => 'required|regex:/^\d{4,5}$/',
             'address' => 'required|string|max:255',
-            'inquiry_type' => 'required',
+            'inquiry_type' =>
+            'required|in:ProductDelivery,ProductReplacement,ProductTrouble,other',
             'content' => 'required|string|max:120',
         ];
     }

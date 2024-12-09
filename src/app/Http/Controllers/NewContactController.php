@@ -16,36 +16,41 @@ class NewContactController extends Controller
     //確認ページ
     public function confirm(ContactRequest $request)
     {
-        $contact = $request->only(['last_name', 'first_name', 'gender', 'email', 'tel1', 'tel2', 'tel3', 'address', 'building', 'inquiry_type', 'content']);
+
+        $contact = $request->only(['last_name', 'first_name', 'gender', 'email', 'address', 'building', 'inquiry_type', 'content']);
+
+        $tel = $request->input('tel1') . '-' . $request->input('tel2') . '-' . $request->input('tel3');
+
+        $contact['tel'] = $tel;
 
         return view('confirm', compact('contact'));
     }
 
-    //完了ページ
     public function store(ContactRequest $request)
     {
-        $contact = $request->only(['last_name', 'first_name', 'gender', 'email', 'tel1', 'tel2', 'tel3', 'address', 'building', 'inquiry_type', 'content']);
+        $contact = $request->only(['last_name', 'first_name', 'gender', 'email',  'address', 'building', 'inquiry_type', 'content']);
+
+        $tel = $request->input('tel1') . '-' . $request->input('tel2') . '-' . $request->input('tel3');
+
+        $contact['tel'] = $tel;
+
         Contact::create($contact);
 
         return
-        redirect()->route('contact.thanks');
+        redirect()->route('thanks');
     }
 
-    //管理画面
+
+    public function thanks()
+    {
+        return view('thanks');
+    }
+
     public function admin()
     {
-        return view('admin');
+        $contacts = Contact::select('last_name', 'first_name', 'gender', 'email',  'inquiry_type')->get();
+
+        return view('admin', compact('contacts'));
     }
 
-    //登録画面
-    public function registar()
-    {
-        return view('registar');
-    }
-
-    //ログイン画面
-    public function login()
-    {
-        return view('login');
-    }
 }
