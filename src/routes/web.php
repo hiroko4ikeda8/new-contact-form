@@ -17,7 +17,7 @@ use PharIo\Manifest\AuthorCollection;
 */
 
 Route::get('/', [NewContactController::class, 'index']);//入力画面
-Route::post('/contacts/confirm', [NewContactController::class, 'confirm']); //確認画面
+Route::post('/contact/confirm', [NewContactController::class, 'confirm']); //確認画面
 Route::post('/contacts', [NewContactController::class, 'store']);//保存
 Route::post('/thanks', [NewContactController::class, 'thanks']);//完了画面
 

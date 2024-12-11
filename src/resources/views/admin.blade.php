@@ -1,36 +1,65 @@
 @extends('layouts.app')
 
 @section('css')
-<link rel="stylesheet" href="{{ asset('css/index.css') }}">
+<link rel="stylesheet" href="{{ asset('css/sanitize.css') }}" />
+<link rel="stylesheet" href="{{ asset('css/index.css') /}}">
 @endsection
 
 @section('content')
-<div class="attendance__alert">
-    // メッセージ機能
-</div>
 
-<div class="attendance__content">
-    <div class="attendance__panel">
-        <form class="attendance__button">
-            <button class="attendance__button-submit" type="submit">勤務開始</button>
-        </form>
-        <form class="attendance__button">
-            <button class="attendance__button-submit" type="submit">勤務終了</button>
-        </form>
-    </div>
-    <div class="attendance-table">
-        <table class="attendance-table__inner">
-            <tr class="attendance-table__row">
-                <th class="attendance-table__header">名前</th>
-                <th class="attendance-table__header">開始時間</th>
-                <th class="attendance-table__header">終了時間</th>
-            </tr>
-            <tr class="attendance-table__row">
-                <td class="attendance-table__item">サンプル太郎</td>
-                <td class="attendance-table__item">サンプル</td>
-                <td class="attendance-table__item">サンプル</td>
-            </tr>
+<header class="header">
+    <div class="header__inner">
+        <div class="header-utilities">
+            <a class="header__logo" href="/">
+                FashionablyLate
+            </a>
+        </div>
+</header>
+
+<body>
+    <header>
+        <h1>Admin</h1>
+    </header>
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>名前</th>
+                    <th>メールアドレス</th>
+                    <th>登録日</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>山田 太郎</td>
+                    <td>taro@example.com</td>
+                    <td>2024-12-01</td>
+                    <td>
+                        <button class="edit-btn">編集</button>
+                        <button class="delete-btn">削除</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>鈴木 花子</td>
+                    <td>hanako@example.com</td>
+                    <td>2024-12-02</td>
+                    <td>
+                        <button class="edit-btn">編集</button>
+                        <button class="delete-btn">削除</button>
+                    </td>
+                </tr>
+            </tbody>
         </table>
-    </div>
-</div>
+    </main>
+    <footer>
+        <p>© 2024 登録者管理システム</p>
+    </footer>
+</body>
+
+</html>
+
 @endsection

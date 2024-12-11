@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Contact;
 use App\Http\Requests\ContactRequest;
+use App\Models\Category;
 
 class NewContactController extends Controller
 {
@@ -14,24 +15,23 @@ class NewContactController extends Controller
     }
 
     //確認ページ
-    public function confirm(ContactRequest $request)
+    public function constant(ContactRequest $request)
     {
-
-        $contact = $request->only(['last_name', 'first_name', 'gender', 'email', 'address', 'building', 'inquiry_type', 'content']);
-
         $tel = $request->input('tel1') . '-' . $request->input('tel2') . '-' . $request->input('tel3');
-
+        
+        $contact = $request->only(['last_name', 'first_name', 'gender', 'email', 'address', 'building', 'inquiry_type', 'content']);
+        
         $contact['tel'] = $tel;
 
         return view('confirm', compact('contact'));
     }
 
-    public function store(ContactRequest $request)
+    public function confirm(ContactRequest $request)
     {
-        $contact = $request->only(['last_name', 'first_name', 'gender', 'email',  'address', 'building', 'inquiry_type', 'content']);
-
         $tel = $request->input('tel1') . '-' . $request->input('tel2') . '-' . $request->input('tel3');
 
+        $contact = $request->only(['last_name', 'first_name', 'gender', 'email', 'tel',  'address', 'building', 'inquiry_type', 'content']);
+        
         $contact['tel'] = $tel;
 
         Contact::create($contact);
